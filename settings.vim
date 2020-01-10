@@ -191,7 +191,7 @@ nohlsearch          " avoid highlighting when reloading vimrc
 " Folding
 set foldenable            " enable folding
 set foldcolumn=1
-set foldlevel=1           " start out with everything folded
+set foldlevel=99          " start out with everything folded
 set foldmethod=syntax     " detect triple-{ style fold markers
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 set foldtext=MyFoldText() " Which command trigger auto-unfold
@@ -201,3 +201,9 @@ set sessionoptions=buffers,curdir,folds,tabpages,winsize
 let s:sessiondir  = expand("~/.vim/sessions", 1)
 let s:sessionfile = expand(s:sessiondir . "/session.vim", 1)
 let s:sessionlock = expand(s:sessiondir . "/session.lock", 1)
+
+function! Formatonsave()
+  let l:formatdiff = 1
+  pyf /usr/share/vim/addons/syntax/clang-format-6.0.py
+endfunction
+autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()

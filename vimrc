@@ -25,3 +25,4 @@ source $HOME/.vim/map.vim
 source $HOME/.vim/plugins.vim
 source $HOME/.vim/functions.vim
 source $HOME/.vim/autocmd.vim
+let g:ycm_confirm_extra_conf=0

@@ -89,12 +89,12 @@
 " NERDTree
   map <silent> <C-o> :NERDTreeToggle<CR>
   let g:NERDTreeBookmarksFile = expand($HOME.'/.vim/.NERDTreeBookmarks')
-  let g:NERDTreeWinPos = "right"
+  let g:NERDTreeWinPos = "left"
   let g:NERDTreeShowBookmarks = 1
   let g:NERDTreeWinSize = 40
   let g:NERDTreeChristmasTree = 0
   let g:NERDTreeCaseSensitiveSort = 1
-  let g:NERDTreeQuitOnOpen = 1
+  let g:NERDTreeQuitOnOpen = 0
   let g:NERDTreeShowHidden = 1
   let g:NERDTreeMouseMode = 2
   let NERDTreeAutoDeleteBuffer=1
@@ -181,12 +181,12 @@
     let g:deoplete#keyword_patterns['default'] = '\h\w*'
 
     " SuperTab like snippets behavior.
-    imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)"
-    \: pumvisible() ? "\<C-n>" : "\<TAB>"
-    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)"
-    \: "\<TAB>"
+    "imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    "\ "\<Plug>(neosnippet_expand_or_jump)"
+    "\: pumvisible() ? "\<C-n>" : "\<TAB>"
+    "smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    "\ "\<Plug>(neosnippet_expand_or_jump)"
+    "\: "\<TAB>"
 
     " Some convenient mappings
     imap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
