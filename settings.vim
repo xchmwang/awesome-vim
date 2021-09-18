@@ -208,3 +208,5 @@ function! Formatonsave()
   pyf /usr/local/Cellar/clang-format/2019-05-14/bin/clang-format.py
 endfunction
 autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
+
+autocmd BufWritePost *.py !autopep8 -i %
